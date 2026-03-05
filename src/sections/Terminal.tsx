@@ -1,4 +1,7 @@
+import { Section } from "lucide-react";
 import { socialsLinks } from "../constants";
+import { SectionTitle } from "@/components"
+
 export default function Terminal() {
     const terminalHostName = "codato@portfolio:~$ ";
     const commands = {
@@ -9,15 +12,12 @@ export default function Terminal() {
     }
 
     return (
-        <div>
-            <div>
-                <div>{terminalHostName}</div>
-                <div>
-                    {/**
-                     * Aqui vai ter os botões fictícios de minimizar e fechar, e o terminal em si, que vai ser um input onde o usuário pode digitar os comandos, e abaixo disso vai ter a resposta do comando digitado.
-                     */}
-                </div>
+        <section className="flex flex-col items-start gap-6 w-full max-w-4xl my-auto px-4 py-8">
+            <SectionTitle title="Terminal" />
+            {/* {Terminal interativo} */}
+            <div className="w-full min-h-100 border-white border-tl-2 border-tr-2 border-bl-2 border-br-2 rounded-lg p-4 bg-black text-green-500 font-mono">
+                <p>{terminalHostName}help</p>
             </div>
-        </div>
+        </section>
     )
 };
