@@ -1,18 +1,23 @@
+import Image from "next/image";
+
 export default function NavBar() {
-  const title = "Codato";
-  const subtitle = "developer ·  developer · experimental creator";
+  const title = "André Codato";
+  const subtitle = "builder ·  developer · experimental creator";
   const phrase = "Projects, experiments and controlled chaos.";
 
   return (
-    <nav className="w-full h-16 flex items-center justify-between px-4">
-      <div className="flex flex-col">
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-bold">{title}</h1>
-          <p className="text-sm text-gray-500">{subtitle}</p>
+    <nav className="w-full h-16 flex flex-col justify-between my-5 px-4">
+      <div className="flex items-center">
+        <a href="/">
+          <Image src="/logo.png" alt="Logo" width={100} height={100} />
+        </a>
+        <div className="flex flex-col text-codato-mint">
+          <h1 className="text-3xl font-bold">{title}</h1>
+          <p className="text-lg text-codato-mint">{subtitle}</p>
         </div>
-        <div className="w-auto h-[2px] bg-green-600" />
-        <p className="text-sm text-gray-500">{phrase}</p>
       </div>
+        <div className="w-full h-[5px] bg-codato-mint neon-glow" />
+        <p className="text-xl text-codato-mint mt-10">{phrase}</p>
     </nav>
   );
 }

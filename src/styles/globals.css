@@ -2,14 +2,37 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--color-codato-bg);
+}
+
+@theme {
+
+  /* Brand */
+  --color-codato-neon: #5CFF9D;
+  --color-codato-glow: #7CFFB2;
+  --color-codato-mint: #B4FFD7;
+
+  /* Backgrounds */
+  --color-bg: #0A0F14;
+  --color-surface: #111827;
+  --color-card: #1F2937;
+
+  /* Text */
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+
+}
+
+@utility neon-glow {
+  box-shadow:
+    0 0 6px #5CFF9D,
+    0 0 16px #5CFF9D,
+    0 0 30px #5CFF9D;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +45,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-jetbrains);
 }
