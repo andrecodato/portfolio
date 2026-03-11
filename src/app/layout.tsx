@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${jetBrainsMono.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
+        className={`${jetBrainsMono.variable} ${inter.variable} antialiased flex flex-col items-center min-h-screen max-w-5xl mx-auto`}
       >
         <NavBar />
         {children}

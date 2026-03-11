@@ -4,22 +4,29 @@ const socialsLinks = {
   youtube: "https://www.youtube.com/@andrecodato",
 };
 
-const projectsCards = {
-  "Project 1": {
-    description: "Description of project 1",
-    link: "https://example.com/project1",
+type ProjectCard = {
+  description: string;
+  linkUrl: string;
+  stack?: string[];
+};
+
+const projectsCards: Record<string, ProjectCard> = {
+  "Koda Create": {
+    description: "Landing page para a agência de produção de conteúdo digital Koda Create.",
+    linkUrl: "https://www.kodacreate.com.br/",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   "Project 2": {
     description: "Description of project 2",
-    link: "https://example.com/project2",
+    linkUrl: "https://example.com/project2",
   },
   "Project 3": {
     description: "Description of project 3",
-    link: "https://example.com/project3",
+    linkUrl: "https://example.com/project3",
   },
   "Project 4": {
     description: "Description of project 4",
-    link: "https://example.com/project4",
+    linkUrl: "https://example.com/project4",
   },
 };
 
