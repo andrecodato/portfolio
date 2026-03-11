@@ -1,4 +1,4 @@
-import { Cards, SectionTitle } from "@/components";
+import { ProjectCards, SectionTitle } from "@/components";
 import { projectsCards } from "@/constants";
 
 export default function Projetos() {
@@ -7,7 +7,7 @@ export default function Projetos() {
             <SectionTitle title="Projetos" />
             <div className="w-full h-full grid grid-cols-2 gap-8 ">
                 {Object.entries(projectsCards).map(([title, { description, linkUrl, stack }]) => (
-                    <Cards
+                    <ProjectCards
                         key={title}
                         title={title}
                         description={description} 

@@ -1,11 +1,11 @@
 import NavBar from "./NavBar";
-import SectionTitle from "./ui/SectionTitle";
-import Cards from "./ui/Cards";
+import SectionTitle from "./ui/SectionTitle";[]
 import Footer from "./Footer";
+import ProjectCards from "./ui/ProjectCards";
 
 export {
   NavBar,
   SectionTitle,
-  Cards ,
+  ProjectCards ,
   Footer
 };
