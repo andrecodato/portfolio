@@ -1,23 +1,51 @@
-import { Section } from "lucide-react";
 import { socialsLinks } from "../constants";
-import { SectionTitle } from "@/components"
+import { SectionTitle } from "@/components";
 
 export default function Terminal() {
-    const terminalHostName = "codato@portfolio:~$ ";
-    const commands = {
-        "help": "Available commands: help, about, projects, contact",
-        "about": "I am a software developer with a passion for creating innovative solutions.",
-        "projects": `You can find my projects on my GitHub: ${socialsLinks.github}`,
-        "contact": `You can reach me on LinkedIn: ${socialsLinks.linkedin} or YouTube: ${socialsLinks.youtube}`,
-    }
+  const hostname = "codato@portfolio";
+  const commands = [
+    { cmd: "help", out: "Available commands: help, about, projects, contact" },
+    { cmd: "about", out: "Software developer focused on building creative & useful things." },
+    { cmd: "projects", out: `Check my work → ${socialsLinks.github}` },
+    { cmd: "contact", out: `LinkedIn: ${socialsLinks.linkedin}\nYouTube: ${socialsLinks.youtube}` },
+  ];
 
-    return (
-        <section className="flex flex-col items-start gap-6 w-full max-w-4xl my-auto px-4 py-8">
-            <SectionTitle title="Terminal" />
-            {/* {Terminal interativo} */}
-            <div className="w-full min-h-100 border-white border-tl-2 border-tr-2 border-bl-2 border-br-2 rounded-lg p-4 bg-black text-green-500 font-mono">
-                <p>{terminalHostName}help</p>
+  return (
+    <section className="w-full px-6 py-20">
+      <SectionTitle title="Terminal" />
+      <div className="w-full rounded-xl border border-card bg-[#0c0c0c] overflow-hidden shadow-2xl">
+        {/* Title bar */}
+        <div className="flex items-center gap-2 px-4 py-3 bg-surface/60 border-b border-card">
+          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <span className="ml-3 text-xs text-text-secondary font-mono">~/portfolio</span>
+        </div>
+        {/* Terminal body */}
+        <div className="p-5 font-mono text-sm space-y-3 min-h-[280px]">
+          {commands.map(({ cmd, out }) => (
+            <div key={cmd}>
+              <p>
+                <span className="text-codato-neon">{hostname}</span>
+                <span className="text-text-secondary">:</span>
+                <span className="text-blue-400">~</span>
+                <span className="text-text-secondary">$ </span>
+                <span className="text-text-primary">{cmd}</span>
+              </p>
+              {out.split("\n").map((line, i) => (
+                <p key={i} className="text-text-secondary ml-0 pl-0">{line}</p>
+              ))}
             </div>
-        </section>
-    )
-};
+          ))}
+          <p>
+            <span className="text-codato-neon">{hostname}</span>
+            <span className="text-text-secondary">:</span>
+            <span className="text-blue-400">~</span>
+            <span className="text-text-secondary">$ </span>
+            <span className="inline-block w-2 h-4 bg-codato-neon animate-blink align-middle" />
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

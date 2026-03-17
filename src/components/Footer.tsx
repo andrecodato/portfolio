@@ -1,40 +1,34 @@
 import { socialsLinks } from "@/constants";
 import { Github, Linkedin, Youtube } from "lucide-react";
 
+const socials = [
+  { icon: Github, href: socialsLinks.github, label: "GitHub" },
+  { icon: Linkedin, href: socialsLinks.linkedin, label: "LinkedIn" },
+  { icon: Youtube, href: socialsLinks.youtube, label: "YouTube" },
+];
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const copyrightText = `© ${currentYear} André Codato.`;
 
   return (
-    <footer className="w-full h-16 flex items-center justify-center text-white mt-10">
-      <div className="flex flex-col items-center space-y-4 ">
-        <div className="grid grid-cols-3">
-          <div className="w-auto h-[1px] bg-white" />
-          <span className="text-2xl mx-20">{copyrightText}</span>
-          <div className="w-auto h-[1px] bg-white" />
-        </div>
-        <div className="flex space-x-12 mb-10">
-          <a
-            href={socialsLinks.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github size={40} />
-          </a>
-          <a
-            href={socialsLinks.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin size={40} />
-          </a>
-          <a
-            href={socialsLinks.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Youtube size={40} />
-          </a>
+    <footer className="w-full border-t border-white/5 mt-24">
+      <div className="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p className="text-text-secondary text-sm">
+          © {currentYear} André Codato. Built with Next.js.
+        </p>
+        <div className="flex items-center gap-6">
+          {socials.map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-text-secondary hover:text-codato-neon transition-colors duration-200 hover:-translate-y-0.5 transform"
+            >
+              <Icon size={20} />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

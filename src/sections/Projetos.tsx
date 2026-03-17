@@ -3,18 +3,19 @@ import { projectsCards } from "@/constants";
 
 export default function Projetos() {
     return (
-        <section className="w-full my-20 pt-20">
+        <section id="projetos" className="w-full px-6 py-20 scroll-mt-20">
             <SectionTitle title="Projetos" />
-            <div className="w-full h-full grid grid-cols-2 gap-8 ">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
                 {Object.entries(projectsCards).map(([title, { description, linkUrl, stack }]) => (
                     <ProjectCards
                         key={title}
                         title={title}
-                        description={description} 
+                        description={description}
                         linkUrl={linkUrl}
-                        stack={stack} />
+                        stack={stack}
+                    />
                 ))}
             </div>
         </section>
-    )
-};
+    );
+}

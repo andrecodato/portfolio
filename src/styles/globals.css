@@ -42,12 +42,108 @@
   }
 }
 
+/* Animated dark gradient background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
-  background: var(--background);
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #111111 20%,
+    #0d0d0d 40%,
+    #141414 60%,
+    #0b0b0b 80%,
+    #101010 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
   color: var(--foreground);
   font-family: var(--font-inter);
+  position: relative;
+}
+
+/* Noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+/* Ensure content sits above the noise */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-jetbrains);
+}
+
+/* ── Custom animations ── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(8px) translateX(-50%); }
+}
+
+@utility animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@utility animate-pulse-slow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
+
+@utility animate-bounce-slow {
+  animation: bounceSlow 3s ease-in-out infinite;
+}
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@utility fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }

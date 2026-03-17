@@ -1,22 +1,35 @@
 import Image from "next/image";
+import Link from "next/link";
+
+const navLinks = [
+  { label: "Projetos", href: "/#projetos" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Blog", href: "/blog" },
+];
 
 export default function NavBar() {
-  const title = "André Codato";
-  const subtitle = "builder ·  developer · experimental creator";
-  const phrase = "Projects, experiments and controlled chaos.";
-
   return (
-    <nav className="w-full h-16 flex flex-col justify-between my-5 px-4">
-      <div className="flex items-center border-b border-codato-mint/20 pb-4">
-        <a href="/">
-          <Image src="/logo.png" alt="Logo" width={80} height={80} />
-        </a>
-        <div className="flex flex-col text-codato-mint">
-          <h1 className="text-3xl font-bold">{title}</h1>
-          <p className="text-lg text-codato-mint">{subtitle}</p>
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-bg/60 border-b border-white/5">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image src="/logo.png" alt="Logo" width={36} height={36} className="rounded-lg" />
+          <span className="text-text-primary font-bold text-lg tracking-tight group-hover:text-codato-neon transition-colors">
+            codato<span className="text-codato-neon">.dev</span>
+          </span>
+        </Link>
+
+        <div className="flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="text-sm text-text-secondary hover:text-codato-neon transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-codato-neon after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
-        <p className="text-xl text-text-primary mt-10">{phrase}</p>
     </nav>
   );
 }
