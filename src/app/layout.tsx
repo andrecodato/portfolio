@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${jetBrainsMono.variable} ${inter.variable} antialiased min-h-screen`}
       >
         <NavBar />
-        <div className="max-w-5xl mx-auto flex flex-col items-center">
+        <div className="flex flex-col items-center min-h-screen">
           {children}
           <Footer />
         </div>

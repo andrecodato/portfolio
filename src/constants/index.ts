@@ -8,6 +8,8 @@ type ProjectCard = {
   description: string;
   linkUrl: string;
   stack?: string[];
+  imageUrl?: string;
+  alt?: string;
 };
 
 const projectsCards: Record<string, ProjectCard> = {
@@ -15,10 +17,15 @@ const projectsCards: Record<string, ProjectCard> = {
     description: "Landing page para a agência de produção de conteúdo digital Koda Create.",
     linkUrl: "https://www.kodacreate.com.br/",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    imageUrl: "/images/projects/koda.png",
+    alt: "Screenshot da landing page da Koda Create, mostrando uma interface moderna e vibrante com seções de serviços, portfólio e contato."
   },
-  "Project 2": {
-    description: "Description of project 2",
-    linkUrl: "https://example.com/project2",
+  "Dojjo": {
+    description: "Dojjo SP Streetwear",
+    linkUrl: "https://dojjosp.com.br/",
+    stack: ["Shopify", "Bling", "Melhor Envio"],
+    imageUrl: "/images/projects/dojjo.png",
+    alt: "Screenshot da loja online Dojjo SP Streetwear, mostrando uma interface moderna e vibrante com seções de produtos, promoções e contato."
   },
   "Project 3": {
     description: "Description of project 3",
@@ -32,13 +39,27 @@ const projectsCards: Record<string, ProjectCard> = {
 
 const sobreText = {
   aboutText:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  creativeList: ["CMS", "Game Servers", "Landing pages", "Bot development"],
+    "Sou um desenvolvedor focado em transformar ideias em produtos reais, funcionais e escaláveis. Trabalho principalmente com Next.js, criando aplicações modernas com foco em performance, organização e experiência do usuário. Tenho uma mentalidade prática: aprendo construindo e já desenvolvi sistemas completos com autenticação, dashboards, integrações com APIs e automações. Além da programação, também empreendo — fui cofundador da hamburgueria artesanal OPORÃO, o que me dá uma visão além do código, focada em produto e negócio. Também exploro criatividade através da música com a banda RABISCO, trazendo uma abordagem mais autêntica e experimental para tudo que construo. Meu objetivo é evoluir constantemente como desenvolvedor fullstack e criar soluções que realmente gerem impacto.",
+  
+  creativeList: [
+    "Next.js",
+    "React",
+    "Node.js",
+    "APIs & Integrações",
+    "Autenticação (JWT / Supabase)",
+    "Dashboards & Sistemas Web",
+    "Landing Pages",
+    "Bots & Automação (WhatsApp)",
+    "Game Servers",
+    "UI com Tailwind"
+  ],
+
   otherList: [
-    "Garçom e cozinheiro por 4 anos",
-    "Guitarrista na Banda RABISCO",
-    "Other 3",
-    "Other 4",
+    "Empreendedor (OPORÃO Burgers)",
+    "Garçom e cozinheiro por 4+ anos",
+    "Guitarrista na banda RABISCO",
+    "Criação de conteúdo (Twitch)",
+    "Produção musical e design"
   ],
 };
 

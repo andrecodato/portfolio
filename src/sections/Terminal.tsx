@@ -11,7 +11,8 @@ export default function Terminal() {
   ];
 
   return (
-    <section className="w-full px-6 py-20">
+    <section className="w-full py-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
       <SectionTitle title="Terminal" />
       <div className="w-full rounded-xl border border-card bg-[#0c0c0c] overflow-hidden shadow-2xl">
         {/* Title bar */}
@@ -45,6 +46,7 @@ export default function Terminal() {
             <span className="inline-block w-2 h-4 bg-codato-neon animate-blink align-middle" />
           </p>
         </div>
+      </div>
       </div>
     </section>
   );
