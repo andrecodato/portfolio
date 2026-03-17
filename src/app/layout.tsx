@@ -17,6 +17,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "André Codato - Portfólio",
   description: "Projects, experiments and controlled chaos.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "André Codato - Portfólio",
     description: "Projects, experiments and controlled chaos.",

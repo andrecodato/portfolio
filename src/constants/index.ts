@@ -55,7 +55,7 @@ const sobreText = {
   ],
 
   otherList: [
-    "Empreendedor (OPORÃO Burgers)",
+    "Empreendedor",
     "Garçom e cozinheiro por 4+ anos",
     "Guitarrista na banda RABISCO",
     "Criação de conteúdo (Twitch)",
