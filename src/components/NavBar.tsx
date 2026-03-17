@@ -12,7 +12,7 @@ export default function NavBar() {
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 h-14 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-bold tracking-tight text-text-primary hover:text-codato-neon transition-colors duration-300"
+          className="text-xl font-bold tracking-tight text-text-primary transition-colors duration-300"
         >
           codato<span className="text-codato-neon">.dev</span>
         </Link>

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "André Codato - Portfólio",
     description: "Projects, experiments and controlled chaos.",
+    images: "/favicon.svg",
     url: "https://codato.dev",
     siteName: "André Codato - Portfólio",
   },

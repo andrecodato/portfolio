@@ -30,7 +30,7 @@ export default async function PostPage({ params }: PostPageProps) {
   if (!post) notFound();
 
   return (
-    <main className="w-full px-6 py-16 mt-20">
+    <main className="w-full px-6 py-16 mt-20 max-w-6xl mx-auto">
       <Link
         href="/blog"
         className="text-text-secondary hover:text-codato-neon transition-colors text-sm mb-8 inline-flex items-center gap-1"
