@@ -11,12 +11,12 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="w-full mt-20 px-6 py-16 max-w-6xl mx-auto">
+    <main className="w-full px-6 py-16 max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold text-text-primary mb-2">
         Blog
       </h1>
       <p className="text-text-secondary mb-12">
-        Artigos, notas e experimentos.
+        Artigos, notas, experimentos, atividades...
       </p>
 
       {posts.length === 0 ? (

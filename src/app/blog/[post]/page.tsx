@@ -3,6 +3,7 @@ import MDXContent from "@/components/MDXContent";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import rehypeHighlight from "rehype-highlight";
 
 interface PostPageProps {
   params: Promise<{ post: string }>;
@@ -30,7 +31,7 @@ export default async function PostPage({ params }: PostPageProps) {
   if (!post) notFound();
 
   return (
-    <main className="w-full px-6 py-16 mt-20 max-w-6xl mx-auto">
+    <main className="w-full px-6 py-16 max-w-6xl mx-auto">
       <Link
         href="/blog"
         className="text-text-secondary hover:text-codato-neon transition-colors text-sm mb-8 inline-flex items-center gap-1"
@@ -67,7 +68,7 @@ export default async function PostPage({ params }: PostPageProps) {
         )}
       </header>
 
-      <MDXContent source={post.content} />
+      <MDXContent source={post.content} rehypePlugins={[rehypeHighlight]} />
     </main>
   );
 }

@@ -1,4 +1,5 @@
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import type { PluggableList } from "unified";
 
 const components = {
   h1: (props: React.ComponentProps<"h1">) => (
@@ -36,12 +37,17 @@ const components = {
       {...props}
     />
   ),
-  code: (props: React.ComponentProps<"code">) => (
-    <code
-      className="bg-surface text-codato-neon px-1.5 py-0.5 rounded text-sm font-mono"
-      {...props}
-    />
-  ),
+  code: (props: React.ComponentProps<"code">) => {
+    const isInline = !props.className?.includes("hljs");
+    return isInline ? (
+      <code
+        className="bg-surface text-codato-neon px-1.5 py-0.5 rounded text-sm font-mono"
+        {...props}
+      />
+    ) : (
+      <code {...props} />
+    );
+  },
   pre: (props: React.ComponentProps<"pre">) => (
     <pre
       className="bg-surface border border-card rounded-lg p-4 overflow-x-auto my-6 text-sm"
@@ -74,12 +80,17 @@ const components = {
 
 interface MDXContentProps {
   source: string;
+  rehypePlugins?: PluggableList;
 }
 
-export default function MDXContent({ source }: MDXContentProps) {
+export default function MDXContent({ source, rehypePlugins }: MDXContentProps) {
   return (
     <article className="prose-custom max-w-none">
-      <MDXRemote source={source} components={components} />
+      <MDXRemote
+        source={source}
+        components={components}
+        options={{ mdxOptions: { rehypePlugins } }}
+      />
     </article>
   );
 }
