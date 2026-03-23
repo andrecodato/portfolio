@@ -4,7 +4,7 @@ import { sobreText } from "@/constants";
 export default function Sobre() {
   return (
     <section id="sobre" className="w-full py-20 scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 ">
       <SectionTitle title="Sobre mim" />
       <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Bio */}

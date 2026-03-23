@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full border-t border-white/5 mt-24">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-text-secondary text-sm">
           © {currentYear} André Codato. Built with Next.js.
         </p>

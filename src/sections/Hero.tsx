@@ -54,7 +54,7 @@ export default function Hero() {
       </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-20 pt-24 pb-16">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-16">
         <div className="max-w-2xl fade-in-up">
           <div className="flex items-center gap-2 mb-6">
             <div className="w-3 h-3 rounded-full bg-codato-neon animate-pulse" />

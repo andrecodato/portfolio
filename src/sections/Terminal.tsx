@@ -12,7 +12,7 @@ export default function Terminal() {
 
   return (
     <section className="w-full py-20">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 ">
       <SectionTitle title="Terminal" />
       <div className="w-full rounded-xl border border-card bg-[#0c0c0c] overflow-hidden shadow-2xl">
         {/* Title bar */}
