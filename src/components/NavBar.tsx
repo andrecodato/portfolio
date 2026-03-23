@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Projetos", href: "/#projetos" },
   { label: "Sobre", href: "/#sobre" },
   { label: "Blog", href: "/blog" },
-  { label: "Lab 🧪", href: "/tools" },
+  { label: "Lab 🧪", href: "/lab" },
 ];
 
 export default function NavBar() {
