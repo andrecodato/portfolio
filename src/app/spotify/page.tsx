@@ -71,7 +71,8 @@ function msToTime(ms: number) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-function formatFollowers(n: number) {
+function formatFollowers(n: number | undefined) {
+  if (n == null) return "";
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
   return n.toString();
