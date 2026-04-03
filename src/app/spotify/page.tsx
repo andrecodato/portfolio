@@ -245,7 +245,7 @@ export default function SpotifyPage() {
               <h3 className="font-mono text-sm font-semibold text-white uppercase tracking-wider">
                 Top Músicas
               </h3>
-              <span className="text-[10px] text-[#a0aec0] font-mono ml-auto">último mês</span>
+              <span className="text-[10px] text-[#a0aec0] font-mono ml-auto">último ano</span>
             </div>
             <div className="space-y-1">
               {data?.tracks.map((track, i) => (

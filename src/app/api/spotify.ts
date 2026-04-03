@@ -48,11 +48,11 @@ export async function getNowPlaying() {
 }
 
 export async function getTopTracks() {
-  return spotifyFetch("/me/top/tracks?time_range=short_term&limit=10");
+  return spotifyFetch("/me/top/tracks?time_range=long_term&limit=10");
 }
 
 export async function getTopArtists() {
-  return spotifyFetch("/me/top/artists?time_range=short_term&limit=10");
+  return spotifyFetch("/me/top/artists?time_range=long_term&limit=10");
 }
 
 export async function getRecentlyPlayed() {
