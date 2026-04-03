@@ -151,18 +151,7 @@ export default function SpotifyPage() {
   const isPlaying = data?.isPlaying ?? false;
 
   return (
-    <main className="min-h-screen w-full max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-      {/* Header */}
-      <div className="flex items-center gap-3 mb-2">
-        <Headphones className="w-6 h-6 text-[#1DB954]" />
-        <h1 className="font-mono text-2xl sm:text-3xl font-bold text-white">
-          // <span className="text-[#1DB954]">Spotify</span>
-        </h1>
-      </div>
-      <p className="text-sm text-[#a0aec0] mb-10 font-mono">
-        O que eu ando ouvindo ultimamente
-      </p>
-
+    <div>
       {/* Three.js Visualizer */}
       <div className="relative w-full h-80 sm:h-100 mb-10 rounded-3xl overflow-hidden border border-white/4">
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#0a0a0a]/90 z-10 pointer-events-none" />
@@ -357,6 +346,6 @@ export default function SpotifyPage() {
           </GlassCard>
         </div>
       )}
-    </main>
+    </div>
   );
 }
